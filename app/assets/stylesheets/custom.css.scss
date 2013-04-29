@@ -1,5 +1,15 @@
 @import "bootstrap";
 
+// mixins, varibles, etc.
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+	-moz-box-sizing: border-box;
+	-box-sizing: border-box;
+}
+
+
+
 // form
 #error_explantion {
 	color: #f00;
@@ -11,4 +21,16 @@
 .field_with_errors {
 	@extend .control-group;
 	@extend .error;
+}
+
+
+
+
+# debug
+.debug_dump {
+	clear: both;
+	float: left;
+	width: 100%;
+	margin-top: 45px;
+	@include box_sizing;
 }
