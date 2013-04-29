@@ -8,9 +8,9 @@ gem 'rails', '3.2.11'
 group :development, :test do
   gem 'sqlite3'
 end
-# group :production do
-#   gem 'pg'
-# end
+group :production do
+  gem 'pg'
+end
 # gem 'sqlite3'
 
 
