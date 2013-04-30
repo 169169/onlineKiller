@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    p 'it is index action'
     @users = User.paginate(page: params[:page])
   end
 
@@ -18,20 +17,17 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
-    p 'ready to show sign up form'
     @user = User.new
   end
 
   # GET /users/1/edit
   def edit
-    p 'ready to edit.'
     @user = User.find(params[:id])
   end
 
   # POST /users
   # POST /users.json
   def create
-    p 'ready to create a new user.'
     @user = User.new(params[:user])
 
     if @user.save
@@ -72,6 +68,6 @@ class UsersController < ApplicationController
 
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_path) unless current_user?(@user)
+      redirect_to(@user, notice: "You are only supposed to edit your own profile.") unless current_user?(@user)
     end
 end
