@@ -31,13 +31,14 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
+    @faculties = Faculty.all.collect { |faculty| [faculty.name, faculty.id] }
 
     if @user.save
       sign_in @user
       flash.now[:success] = "Weclome to online Exam."
       redirect_to @user
     else
-      redirect_back_or @user
+      render 'new'
     end
   end
 
@@ -45,6 +46,8 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
+    @faculties = Faculty.all.collect { |faculty| [faculty.name, faculty.id] } 
+    
     if @user.update_attributes(params[:user])
       flash[:success] = "Profile updated"
       sign_in @user
