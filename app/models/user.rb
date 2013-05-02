@@ -1,5 +1,20 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  email           :string(255)
+#  password_digest :string(255)
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  remember_token  :string(255)
+#  faculty_id      :integer
+#
+
 class User < ActiveRecord::Base 
-  attr_accessible :name, :email, :password, :password_confirmation 
+  belongs_to :faculty
+  attr_accessible :name, :email, :password, :password_confirmation, :faculty_id 
   has_secure_password 
  
   before_save { |user| user.email = email.downcase } 

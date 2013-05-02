@@ -12,6 +12,9 @@
       <%= f.label :email %>
       <%= f.text_field :email %>
 
+      <%= f.label :faculty, "Faculty" %>
+      <%= f.select :faculty_id, @faculties, :prompt=>"select your faculty"%> 
+      
       <%= f.label :password %>
       <%= f.password_field :password %>
 

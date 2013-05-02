@@ -18,11 +18,13 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
+    @faculties = Faculty.all.collect { |faculty| [faculty.name, faculty.id] } 
   end
 
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+    @faculties = Faculty.all.collect { |faculty| [faculty.name, faculty.id] } 
   end
 
   # POST /users
@@ -35,7 +37,7 @@ class UsersController < ApplicationController
       flash.now[:success] = "Weclome to online Exam."
       redirect_to @user
     else
-      redirect_back_or user
+      redirect_back_or @user
     end
   end
 
