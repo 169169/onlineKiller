@@ -1,0 +1,29 @@
+<% provide(:title, 'Editing question') %>
+<h1>Editing question</h1>
+
+<%= form_for(@question) do |f| %>
+	<%= render 'shared/error_messages', object:f.object %>
+
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+	<%= f.label :firstOption %>
+	<%= f.text_field :firstOption %>
+
+	<%= f.label :secondOption %>
+	<%= f.text_field :secondOption %>
+
+	<%= f.label :thirdOption %>
+	<%= f.text_field :thirdOption %>
+
+	<%= f.label :fourthOption %>
+	<%= f.text_field :fourthOption %>
+
+	<%= f.label :subject, "Subject" %>
+	<%= f.select :subject_id, @subjects, :prompt=>"select subject"%> 
+
+	<%= f.submit "Update question", class: "btn btn-large btn-primary" %>
+<% end %>
+
+<%= link_to 'Show', @question %> |
+<%= link_to 'Back', questions_path %>

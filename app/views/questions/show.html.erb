@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th> Subject </th>
+      <th> Title </th>
+      <th> Firstoption </th>
+      <th> Secondoption</th>
+      <th> Thirdoption </th>
+      <th> Fourthoption </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><%= @question.subject_id %>  </th>
+      <th> <%= @question.title %> </th>
+      <th> <%= @question.firstOption %> </th>
+      <th><%= @question.secondOption %>  </th>
+      <th> <%= @question.thirdOption %> </th>
+      <th> <%= @question.fourthOption %> </th>
+    </tr>
+  </tbody>
+  
+  <tr></tr>
+<table>
+
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>

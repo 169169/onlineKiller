@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  subject_id: 1
+  title: MyString
+  firstOption: MyString
+  secondOption: MyString
+  thirdOption: MyString
+  fourthOption: MyString
+
+two:
+  subject_id: 1
+  title: MyString
+  firstOption: MyString
+  secondOption: MyString
+  thirdOption: MyString
+  fourthOption: MyString

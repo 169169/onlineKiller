@@ -1,8 +1,11 @@
 <div class="well sidebar-nav">
   <ul class="nav nav-list">
+    <li class="nav-header">Question</li>
+    <li class="active"><%= link_to "New Question", new_question_path %></li>
+    <li><%= link_to "Question List", questions_path %></li>
     <li class="nav-header">Test</li>
-    <li class="active"><a href="#">New Question</a></li>
     <li><a href="#">New Test</a></li>
+    <li><a href="#">History Test</a></li>
     <li class="nav-header">Users Mange</li>
     <li><%= link_to "User List", users_path %></li>
   </ul>

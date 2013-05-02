@@ -12,5 +12,5 @@
 class Faculty < ActiveRecord::Base
   attr_accessible :id, :name, :description
 
-  has_many :user
+  has_many :users
 end

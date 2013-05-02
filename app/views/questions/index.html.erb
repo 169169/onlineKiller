@@ -1,0 +1,38 @@
+<h1>Listing questions</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+    <th>Subject</th>
+    <th>Title</th>
+    <th>Firstoption</th>
+    <th>Secondoption</th>
+    <th>Thirdoption</th>
+    <th>Fourthoption</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+    </thead>
+  <tbody>
+    <% @questions.each do |question| %>
+  <tr>
+    <th><%= question.subject.name %></th>
+    <th><%= question.title %></th>
+    <th><%= question.firstOption %></th>
+    <th><%= question.secondOption %></th>
+    <th><%= question.thirdOption %></th>
+    <th><%= question.fourthOption %></th>
+    <th><%= link_to 'Show', question %></th>
+    <th><%= link_to 'Edit', edit_question_path(question) %></th>
+    <th><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></th>
+  </tr>
+<% end %>
+  </tbody>
+
+
+</table>
+
+<br />
+
+<%= link_to 'New Question', new_question_path %>

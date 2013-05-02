@@ -1,0 +1,40 @@
+<% provide(:title, 'New Question') %>
+<h1>New Question</h1>
+
+<%= form_for(@question) do |f| %>
+	<%= render 'shared/error_messages', object:f.object %>
+
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+	<%= f.label :firstOption %>
+	<%= f.text_field :firstOption %>
+
+	<%= f.label :secondOption %>
+	<%= f.text_field :secondOption %>
+
+	<%= f.label :thirdOption %>
+	<%= f.text_field :thirdOption %>
+
+	<%= f.label :fourthOption %>
+	<%= f.text_field :fourthOption %>
+
+	<%= f.label :answer %>
+	<label class="checkbox inline">
+		<%= f.radio_button :answer, 'A'%>A
+	</label>
+	<label class="checkbox inline">
+		<%= f.radio_button :answer, 'B'%>B
+	</label>
+	<label class="checkbox inline">
+		<%= f.radio_button :answer, 'C'%>C
+	</label>
+	<label class="checkbox inline">
+		<%= f.radio_button :answer, 'D'%>D
+	</label>
+
+	<%= f.label :subject, "Subject" %>
+	<%= f.select :subject_id, @subjects, :prompt=>"select subject"%> 
+
+	<%= f.submit "Create question", class: "btn btn-large btn-primary" %>
+<% end %>
