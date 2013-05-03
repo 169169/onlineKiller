@@ -2,12 +2,8 @@ class TestsController < ApplicationController
   # GET /tests
   # GET /tests.json
   def index
-    @tests = Test.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @tests }
-    end
+    current_user = User.find_by_remember_token(cookies[:remember_token])
+    @tests = Test.where(current_user)
   end
 
   # GET /tests/1

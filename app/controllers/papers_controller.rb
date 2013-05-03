@@ -32,7 +32,6 @@ class PapersController < ApplicationController
     @subjects = Subject.all.collect { |subject| [subject.name, subject.id] }
 
     if @paper.save
-      contents = Content.new
       questions = Question.where("subject_id=?", @paper.subject_id)
       i = 3;
 
@@ -45,6 +44,16 @@ class PapersController < ApplicationController
         i = i - 1
       end
 
+      students = User.where("faculty_id=?", @paper.faculty_id)
+      students.each do |stu|
+        p "1111111111111111111#{stu.name}"
+        p "2222222222222222222#{@paper.id}" 
+        test = Test.new
+        test.user = stu
+        test.paper = @paper
+
+        test.save
+      end
       flash.now[:success] = "Success."
       redirect_to @paper
     else
