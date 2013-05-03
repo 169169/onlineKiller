@@ -10,10 +10,12 @@
 #  updated_at      :datetime         not null
 #  remember_token  :string(255)
 #  faculty_id      :integer
+#  admin           :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base 
   belongs_to :faculty
+  has_many :tests
   attr_accessible :name, :email, :password, :password_confirmation, :faculty_id 
   has_secure_password 
  

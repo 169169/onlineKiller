@@ -11,13 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130502162322) do
+ActiveRecord::Schema.define(:version => 20130503153541) do
+
+  create_table "contents", :force => true do |t|
+    t.integer  "question_id"
+    t.integer  "paper_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "faculties", :force => true do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "papers", :force => true do |t|
+    t.integer  "subject_id"
+    t.integer  "faculty_id"
+    t.integer  "content_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "questions", :force => true do |t|
@@ -37,6 +52,15 @@ ActiveRecord::Schema.define(:version => 20130502162322) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "tests", :force => true do |t|
+    t.integer  "paper_id"
+    t.integer  "user_id"
+    t.decimal  "mark"
+    t.boolean  "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

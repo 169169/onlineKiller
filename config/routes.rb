@@ -1,4 +1,10 @@
 OnlineKiller::Application.routes.draw do
+  resources :tests
+
+
+  resources :papers
+
+
   resources :questions
 
 

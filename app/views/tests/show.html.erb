@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Paper:</b>
+  <%= @test.paper_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @test.user_id %>
+</p>
+
+<p>
+  <b>Mark:</b>
+  <%= @test.mark %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @test.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_test_path(@test) %> |
+<%= link_to 'Back', tests_path %>

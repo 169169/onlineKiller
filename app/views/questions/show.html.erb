@@ -9,6 +9,7 @@
       <th> Secondoption</th>
       <th> Thirdoption </th>
       <th> Fourthoption </th>
+      <th> Answer </th>
     </tr>
   </thead>
   <tbody>
@@ -19,12 +20,9 @@
       <th><%= @question.secondOption %>  </th>
       <th> <%= @question.thirdOption %> </th>
       <th> <%= @question.fourthOption %> </th>
+      <th> <%= @question.answer %> </th>
     </tr>
   </tbody>
   
   <tr></tr>
 <table>
-
-
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>

@@ -1,0 +1,14 @@
+<% provide(:title, 'New Paper') %>
+<h1>New Paper</h1>
+
+<%= form_for(@paper) do |f| %>
+  <%= render 'shared/error_messages', object:f.object %>
+
+  <%= f.label :faculty, "Faculty" %>
+  <%= f.select :faculty_id, @faculties, :prompt=>"select faculty"%> 
+
+  <%= f.label :subject, "Subject" %>
+  <%= f.select :subject_id, @subjects, :prompt=>"select subject"%> 
+
+  <%= f.submit "Create new test", class: "btn btn-large btn-primary" %>
+<% end %>
