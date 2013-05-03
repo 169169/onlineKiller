@@ -1,12 +1,19 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= @user.name %>
-        <%= @user.email %>
-        <%= @user.faculty.name %>
-      </h1>
-    </section>
-  </aside>
-</div>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th> Name </th>
+			<th> email </th>
+			<th> Faculty </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th><%= @user.name %></th>
+			<th><%= @user.email %></th>
+			<th><%= @user.faculty.name %></th>
+		</tr>
+	</tbody>
+
+	<table>
